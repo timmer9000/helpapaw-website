@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="signal.css" />
+    <title>Shared Signal</title>
+  </head>
+  <body onload="addQrImage()">
+    <script>
+      function addQrImage() {
+        var urlSearchParams = new URLSearchParams(window.location.search);
+        console.log(window.location.search);
+        var params = Object.fromEntries(urlSearchParams.entries());
+        console.log(params);
+
+        var image = document.createElement("img");
+        var imageParent = document.getElementById("qrImageParent");
+        image.id = "qrImage";
+        image.className = "class";
+        image.src =
+          "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" +
+          params["link"];
+        imageParent.appendChild(image);
+      }
+    </script>
+    <header class="header">
+      <section class="header-section">
+        <a href="http://www.helpapaw.org"
+          ><img
+            src="https://backendlessappcontent.com/BDCD56B9-351A-E067-FFA4-9EA9CF2F4000/473D7C4A-3FBC-69F4-FFFF-1635F07E4300/files/web/landing-page/img/Help+a+Paw+-+Logo.png"
+            alt="logo"
+            class="header-section-logo"
+        /></a>
+      </section>
+      <nav class="header-nav">
+        <ul class="header-nav-ul">
+          <li><a href="http://www.helpapaw.org/index_en.html">Home</a></li>
+          <li>
+            <a href="http://www.helpapaw.org/index_en.html#features">About</a>
+          </li>
+          <li><a href="http://www.helpapaw.org/index_en.html#gallery">Gallery</a></li>
+          <li><a href="http://www.helpapaw.org/index_en.html#team">Team</a></li>
+          <li><a href="http://www.helpapaw.org/index_en.html#download">Download</a></li>
+          <li><a href="http://www.helpapaw.org/index_en.html#contact">Contacts</a></li>
+          <li><a href="signal.html">BG</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="main-message">
+        <h1>
+          The signal you're tying to open, can be viewed in the app.
+        </h1>
+        <p>
+          A signal in the free mobile application "Help a Paw" was shared with
+          you.
+        </p>
+        <p>To view it, scan the QR code below with your smartphone camera:</p>
+        <br />
+        <p id="qrImageParent"></p>
+      </section>
+      <section class="main-download">
+        <article class="main-download-wrapper">
+          <h3>Download the app</h3>
+          <p>
+            In case your smartphone or browser can't read the QR code, please
+            use the buttons below to download the application for iOS or
+            Android.
+          </p>
+          <article class="main-download-wrapper-buttons">
+            <button class="main-download-wrapper-buttons-button">
+              <a
+                href="https://itunes.apple.com/gb/app/help-a-paw/id1234893764?mt=8"
+                class="main-download-wrapper-buttons-button-link"
+              >
+                <i class="fab fa-apple"></i>
+                App Store
+              </a>
+            </button>
+            <button class="main-download-wrapper-buttons-button">
+              <a
+                href="https://play.google.com/store/apps/details?id=org.helpapaw.helpapaw"
+                class="main-download-wrapper-buttons-button-link"
+              >
+                <i class="fab fa-google-play"></i>
+                Play Store
+              </a>
+            </button>
+          </article>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <ul class="footer-list">
+        <li>
+          <a href="https://www.facebook.com/help.a.paw/"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://github.com/HelpAPaw"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/company/help-a-paw/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

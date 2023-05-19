@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+
+        <title>Shopping Cart Sample</title>
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+additem = function() {
+
+    var reqDiv = $("#reqAddItem");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/additems.js<br>Body: {\"cartName\":\"MyCart\",\"item\":{\"product\":\"TV Set\",\"price\":199.99,\"quantity\":1}}<br>Content-Type: application/json");
+    var resultDiv = $("#resAddItem");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/additems.js",
+        type: "POST",
+        data: '{"cartName":"MyCart", "item":{"product":"TV Set","price":199.99,"quantity":1}}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+
+additems = function() {
+
+    var reqDiv = $("#reqAddItems");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/additems.js<br>Body: {\"cartName\":\"MyCart\",\"items\":[{\"product\":\"Pen\",\"price\":2.41,\"quantity\":12},{\"product\":\"Pencil\",\"price\":1.2,\"quantity\":24}]}<br>Content-Type: application/json");
+    var resultDiv = $("#resAddItems");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/additems.js",
+        type: "POST",
+        data: '{"cartName":"MyCart", "items":[{"product":"Pen","price":2.41, "quantity":12},{"product":"Pencil", "price":1.2, "quantity":24}]}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+
+getitems = function() {
+
+    var reqDiv = $("#reqGetItems");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/getitems.js<br>Body: {\"cartName\":\"MyCart\"}<br>Content-Type: application/json");
+    var resultDiv = $("#resGetItems");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/getitems.js",
+        type: "POST",
+        data: '{"cartName":"MyCart"}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+
+deleteitem = function() {
+
+    var reqDiv = $("#reqDelItem");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/deleteitem.js<br>Body: {\"cartName\":\"MyCart\",\"productName\":\"TV Set\"}<br>Content-Type: application/json");
+    var resultDiv = $("#resDelItem");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/deleteitem.js",
+        type: "POST",
+        data: '{"cartName":"MyCart",\"productName\":\"TV Set\"}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+
+purchase = function() {
+
+    var reqDiv = $("#reqPurItems");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/purchase.js<br>Body: {\"cartName\":\"MyCart\"}<br>Content-Type: application/json");
+    var resultDiv = $("#resPurItems");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/purchase.js",
+        type: "POST",
+        data: '{"cartName":"MyCart"}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+
+setquantity = function() {
+
+    var reqDiv = $("#reqSetQuantity");
+    reqDiv.html("<strong>Request:</strong><br>URL: " + window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/setquantity.js<br>Body: {\"cartName\":\"MyCart\",\"productName\":\"Pen\",\"quantity\":9}<br>Content-Type: application/json");
+    var resultDiv = $("#resSetQuantity");
+    resultDiv.html("");
+
+    $.ajax({
+        url: window.location.protocol + "//api.backendless.com/7381F40A-5BA6-6CB5-FF82-1F0334A63B00/v1/files/web/scripts/examples/shoppingcart/setquantity.js",
+        type: "POST",
+        data: '{"cartName":"MyCart","productName":"Pen","quantity":9}',
+        contentType: "application/json",
+        success: function (result) {
+            resultDiv.html("<strong>Response:</strong><br>"+JSON.stringify(result));
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+};
+        </script>
+    </head>
+    <body>
+
+        <h1>Welcome to Backendless Hosting Scripts!</h1>
+
+        <p>The ShoppingCart is a sample which will help you with getting tarted with the product.
+            The scripts manage a "shopping cart" which stores products (shopping items) in a transient memory (cache).
+            At the end of the shopping process all the items in the cart can be "purchased" which will result in an "Order" object stored in the persistent storage.
+        </p>
+
+        <p>Usage scenario:</p>
+
+        <p>1. Invoke additems.js to add one shopping item.</p>
+        <button type="button" onclick="additem()">Add Item</button>
+
+        <div id="reqAddItem"></div>
+        <div id="resAddItem"></div>
+
+        <p>2. Invoke additems.js to add two or more shopping items.</p>
+        <button type="button" onclick="additems()">Add Items</button>
+
+        <div id="reqAddItems"></div>
+        <div id="resAddItems"></div>
+
+        <p>3. Invoke getitems.js to see the contents of the shopping cart.</p>
+        <button type="button" onclick="getitems()">Get Items</button>
+
+        <div id="reqGetItems"></div>
+        <div id="resGetItems"></div>
+
+        <p>4. Invoke deleteitem.js to remove an item from the shopping cart.</p>
+        <button type="button" onclick="deleteitem()">Delete Item</button>
+
+        <div id="reqDelItem"></div>
+        <div id="resDelItem"></div>
+
+        <p>5. Invoke setquantity.js to set quantity for the item from the shopping cart.</p>
+        <button type="button" onclick="setquantity()">Set Quantity</button>
+
+        <div id="reqSetQuantity"></div>
+        <div id="resSetQuantity"></div>
+
+        <p>6. Invoke purchase.js to purchase all the items in the cart.</p>
+        <button type="button" onclick="purchase()">Purchase</button>
+
+        <div id="reqPurItems"></div>
+        <div id="resPurItems"></div>
+
+    </body>
+</html>

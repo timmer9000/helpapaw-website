@@ -1,0 +1,148 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(246, 246, 246);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  max-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px 0 15px;
+  border-bottom: 2px solid white;
+}
+
+.header-section-logo {
+  max-height: 100%;
+  max-width: 100px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-ul {
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.header-nav-ul > li {
+  list-style: none;
+  padding: 35px 10px;
+  font-size: 14px;
+}
+
+.header-nav-ul > li > a,
+.header-nav-ul > li > a:hover,
+.header-nav-ul > li > a:focus {
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 500ms ease 0s;
+  text-decoration: none;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.header-nav-ul > li > a {
+  color: rgb(17, 17, 17);
+}
+
+.header-nav-ul > li > a:hover {
+  color: rgb(33, 150, 243);
+}
+
+.main {
+  padding: 30px 0 0 0;
+}
+
+.main-message {
+  max-width: 45vw;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.main-message h1 {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.main-download {
+  background-color: rgb(22, 57, 84);
+  color: white;
+  /*padding: 50px 0;*/
+}
+
+.main-download-wrapper {
+  max-width: 45vw;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.main-download-wrapper h3 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.main-download-wrapper p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.main-download-wrapper-buttons-button {
+  background-color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 30px 2px 0;
+}
+
+.main-download-wrapper-buttons-button a {
+  text-decoration: none;
+  color: rgb(33, 150, 243);
+  font-size: 20px;
+}
+
+.footer {
+  background-color: rgb(246, 246, 246);
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.footer-list li {
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid rgb(221, 221, 221);
+  margin: 0 15px;
+}
+
+.footer-list li a {
+  color: rgb(33, 150, 243);
+  font-size: 16px;
+}
